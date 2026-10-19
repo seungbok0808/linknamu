@@ -1,25 +1,24 @@
 import LinkCard from "@/components/LinkCard";
 import Profile from "@/components/Profile";
 
-// TODO: 실제 프로필/링크 정보로 교체
 const profile = {
-  name: "홍길동",
-  bio: "세계 최강 바이브코더",
-  imageUrl: "/profile-placeholder.svg",
+  name: "이승복",
+  bio: "QA엔지니어 | 요즘에는 AI 개발에 관심이 많아요",
+  imageUrl: "https://placehold.co/224x224/orange/white.png",
 };
 
 const links = [
-  { id: "github", title: "GitHub", url: "https://github.com/" },
-  { id: "linkedin", title: "LinkedIn", url: "https://www.linkedin.com/" },
-  { id: "blog", title: "Blog", url: "https://example.com/" },
+  { id: "github", title: "📈 GitHub", url: "https://github.com/seungbok0808" },
+  { id: "email", title: "✉️ 이메일", url: "mailto:seungbok0808@gmail.com" },
+  { id: "linkedin", title: "🖇️ LinkedIn", url: "https://www.linkedin.com/" },
 ];
 
 export default function Home() {
   return (
-    <main className="flex flex-1 justify-center bg-zinc-50 px-4 py-12 dark:bg-black">
-      <div className="flex w-full max-w-md flex-col gap-10">
+    <main className="flex flex-1 justify-center px-6 pt-16 pb-20 sm:pt-24">
+      <div className="flex w-full max-w-sm flex-col gap-12">
         <Profile {...profile} />
-        <nav className="flex flex-col gap-3">
+        <nav className="flex flex-col gap-4">
           {links.map((link) => (
             <LinkCard key={link.id} title={link.title} url={link.url} />
           ))}

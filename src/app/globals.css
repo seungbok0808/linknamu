@@ -1,26 +1,53 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #fdf8f1;
+  --foreground: #2b2420;
+  --muted: #7a6a5f;
+  --bg-from: #fffaf3;
+  --bg-via: #fdf0e3;
+  --bg-to: #fbdcc8;
+  --glow: rgba(255, 196, 160, 0.55);
+  --glass: rgba(255, 255, 255, 0.45);
+  --glass-hover: rgba(255, 255, 255, 0.65);
+  --glass-border: rgba(255, 255, 255, 0.7);
+  --shadow-tint: rgba(150, 90, 50, 0.18);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #1a1512;
+    --foreground: #f5ece4;
+    --muted: #b5a497;
+    --bg-from: #1c1714;
+    --bg-via: #231a15;
+    --bg-to: #33221a;
+    --glow: rgba(200, 110, 60, 0.25);
+    --glass: rgba(255, 255, 255, 0.06);
+    --glass-hover: rgba(255, 255, 255, 0.1);
+    --glass-border: rgba(255, 255, 255, 0.12);
+    --shadow-tint: rgba(0, 0, 0, 0.4);
+  }
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
+  --color-muted: var(--muted);
+  --color-glass: var(--glass);
+  --color-glass-hover: var(--glass-hover);
+  --color-glass-border: var(--glass-border);
+  --font-sans: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
-  background: var(--background);
+  background-color: var(--background);
+  background-image:
+    radial-gradient(60% 40% at 50% 0%, var(--glow), transparent 70%),
+    linear-gradient(180deg, var(--bg-from) 0%, var(--bg-via) 55%, var(--bg-to) 100%);
+  background-attachment: fixed;
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  word-break: keep-all;
 }
